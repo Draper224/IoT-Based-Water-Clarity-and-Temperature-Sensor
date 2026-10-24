@@ -1,2 +1,8 @@
 # IoT-Based-Water-Clarity-and-Temperature-Sensor
-A water clarity and temperature monitoring system based on Internet of Things with live monitoring through a mobile app.
+A water clarity and temperature monitoring system based on Internet of Things with live monitoring through a cloud based mobile app.
+
+This system is specifically designed for monitoring the clarity and temperature of well water, although it can be used in any bodies of water. The system is split into 2 parts, sensor node and gateway. The sensor node will send data to gateway over cable before the gateway sends said data to cloud wirelessly with Wi-Fi where it can be viewed in a mobile app built for this system. This splitting is so that the sensor node can be placed virtually anywhere as long as the cable is long enough and is capable of connecting those 2 devices. That feature is specifically useful for well water monitoring where the water itself is usually located deep inside the well itself where signals don't typically reach reliably. 
+
+The planned physical location also introduces a new challenge, which is the power source. Using battery wouldn't align with my goal of making it into a long term "deploy and forget" type of monitoring system. Because of that passive Power over Ethernet (PoE) is used for power delivery system from gateway that would be plugged into a wall socket on the surface near the Wi-Fi router.
+
+The data collected by the sensor node will be available for viewing through a mobile app that utilizes the cloud service Firebase as serverless backend. The data will be saved in Firebase's Cloud Firestore. Although the uses of NoSQL can be awkward for complex queries, it shouldn't matter as much since the data that will be viewed are from 2 sensors which are water turbidity and temperature sensor. 
